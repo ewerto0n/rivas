@@ -1,0 +1,53 @@
+@import "colors";
+@import "icomoon-style";
+$font-montserrat: 'Montserrat', sans-serif;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+html, body {
+    margin:0;
+    height:100%;
+    min-height:100%;
+}
+body{
+  font-family: $font-montserrat;
+  background: #fff;
+  //display: flex;
+  //flex-direction: column;
+}
+.container{
+  display: grid;
+  grid-template-areas:
+  "aside main"
+  "aside contato";
+
+  grid-template-columns: 320px 1fr;
+  grid-template-rows: 1fr auto;
+  grid-gap: 10px;
+  height: 100vh;
+}
+.aside{
+  grid-area: aside;
+  background: $azul-escuro;
+  height: 100vh;
+  width: 320px;
+  position: fixed;
+}
+.main{
+  grid-area: main;
+  //loat: left;
+  //margin-left: 320px;
+  //width: 100%;
+  background: #ccc;
+  .sobre{
+    height: 100vh;
+    background: #222;
+  }
+}
+.contato{
+  background: #ccc;
+  grid-area: contato;
+}
