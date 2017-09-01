@@ -26,25 +26,155 @@ body{
 
   grid-template-columns: 320px 1fr;
   grid-template-rows: 1fr auto;
-  grid-gap: 10px;
+  grid-gap: 0px;
   height: 100vh;
 }
 .aside{
+  display: grid;
+  grid-template-areas:
+  "headeraside"
+  "nav"
+  "sociallinks";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
   grid-area: aside;
   background: $azul-escuro;
   height: 100vh;
   width: 320px;
   position: fixed;
+  .header-aside{
+    //height: 100px;
+    grid-area: headeraside;
+    padding: 20px;
+    display: grid;
+    grid-template-areas:
+    "desc perfil";
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+    .desc{
+      grid-area: desc;
+      text-align: right;
+      align-self: center;
+      //width: 70%;
+      float: left;
+      //padding-right: 20px;
+    }
+    .img-perfil{
+      grid-area: perfil;
+      float: left;
+      align-self: center;
+      //width: 30%;
+      img{
+        width: 100px;
+      }
+    }
+    h3{
+      color: #fff;
+    }
+    h5{
+      margin-top: 10px;
+      font-weight: 300;
+      color: $amarelo;
+    }
+  }
+  .nav{
+    grid-area: nav;
+    margin: 20px 0;
+    .active{
+      border-right: 3px solid $amarelo;
+      background: $azul-escuro-sec;
+      color: #fff;
+    }
+    ul{
+      background: #ccc;
+      li{
+        background: #888;
+        a{
+          background: $azul-escuro;
+          border-right: 3px solid $azul-escuro;
+          text-align: center;
+          color: $amarelo;
+          padding: 15px;
+          display: inline-block;
+          width: 100%;
+          min-height: 40px;
+          font-weight: 200;
+          transition: all .2s ease-in;
+          &:hover{
+            border-right: 3px solid $azul-claro;
+            background: $azul-claro;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  .social-links{
+    align-self: end;
+    grid-area: sociallinks;
+    margin: 0 20px 40px;
+    display: grid;
+    grid-template-areas:
+    "sl1""sl2""sl3";
+    grid-template-columns: 1fr 1fr 1fr;
+    a{
+      color: $amarelo;
+      font-size: 1.5em;
+      text-align: center;
+      transition: all .2s ease-in;
+      sl1{
+        grid-area: sl1;
+      }
+      sl2{
+        grid-area: sl2;
+      }
+      sl3{
+        grid-area: sl3;
+      }
+      &:hover{
+        color: #fff;
+      }
+    }
+  }
 }
 .main{
   grid-area: main;
-  //loat: left;
-  //margin-left: 320px;
-  //width: 100%;
+
   background: #ccc;
   .sobre{
+    display: grid;
+    grid-template-areas:
+    "logo"
+    "titulo1sobre"
+    "descsobre";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 4fr;
+    grid-gap: 20px;
     height: 100vh;
-    background: #222;
+    background: url(../img/capa-fb-site.jpg) no-repeat center;
+    background-size: cover;
+    color: #fff;
+    padding: 20px;
+    
+    .logo{
+      grid-area: logo;
+      img{
+        width: 100%;
+      }
+    }
+    .titulo1{
+      grid-area: titulo1sobre;
+      h1{font-weight: 400;}
+    }
+    .desc-sobre{
+      grid-area: descsobre;
+      align-self: center;
+      font-size: 28px;
+      text-align: center;
+      line-height: 2em;
+      font-weight: 100;
+    }
   }
 }
 .contato{
