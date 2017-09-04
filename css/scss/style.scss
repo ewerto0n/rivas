@@ -142,8 +142,26 @@ body{
   grid-area: main;
 
   background: #ccc;
-  .sobre{
+  .sobre, .servicos, .portfolio{
+    height: 100vh;
+  }
+  .sobre, .servicos, .portfolio, .contato{
+    padding: 20px;
     display: grid;
+    h3{
+      position: relative;
+      &::after{
+        content: '';
+        position: absolute;
+        top: 25px;
+        right: 0;
+        width: 100%;
+        height: 1px;
+        background: $azul-escuro;
+      }
+    }
+  }
+  .sobre{
     grid-template-areas:
     "logo"
     "titulo1sobre"
@@ -151,12 +169,11 @@ body{
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 4fr;
     grid-gap: 20px;
-    height: 100vh;
+
     background: url(../img/capa-fb-site.jpg) no-repeat center;
     background-size: cover;
     color: #fff;
-    padding: 20px;
-    
+
     .logo{
       grid-area: logo;
       img{
@@ -176,8 +193,154 @@ body{
       font-weight: 100;
     }
   }
+  .servicos{
+    width: 100%;
+    background: #f2f2f2;
+    display: grid;
+    grid-template-areas:
+    "titulo2"
+    "servs"
+    "servsDesc";
+    grid-template-rows: 1fr 5fr 4fr;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    h3{
+      grid-area: titulo2;
+    }
+    .servs{
+      grid-area: servs;
+
+      display: grid;
+      width: 100%;
+      grid-template-areas:
+      "serv1 serv2 serv3 serv4";
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 20px;
+      .serv{
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        .serv-img{
+          background: $amarelo;
+          height: 100%;
+          width: 100%;
+          padding: 20px;
+          img{
+            width: 100%;
+            margin: 0;
+          }
+        }
+        .serv-titulo{
+          text-align: center;
+          color: $azul-escuro;
+          font-size: 1em;
+          width: 100%;
+          height: 40px;
+          text-transform: uppercase;
+          padding-top: 10px;
+        }
+      }
+      .serv1{grid-area: serv1;}
+      .serv2{grid-area: serv2;}
+      .serv3{grid-area: serv3;}
+      .serv4{grid-area: serv4;}
+
+    }
+    .servs-desc{
+      text-align: center;
+      font-size: 20px;
+      margin-top: 20px;
+      grid-area: servsDesc;
+
+      display: grid;
+      grid-template-areas:
+      "servsDesc1 servsDesc2";
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-column-gap: 20px;
+      .servs-desc1{grid-area: servsDesc1;}
+      .servs-desc2{grid-area: servsDesc2;}
+    }
+
+  }
+  .portfolio{
+    background: #fff;
+    display: grid;
+    grid-template-areas:
+    "titulo3"
+    "portImgs"
+    "portVideos";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr 6fr;
+    h3{grid-area: titulo3;}
+    .port-imgs{
+      grid-area: portImgs;
+      display: grid;
+      grid-template-areas:
+      "portImg1 portImg2 portImg3 portImg4";
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 20px;
+
+      .port-img {
+        background: $amarelo;
+        margin-top: 20px;
+        padding: 20px;
+        img{width: 100%;}
+      }
+
+      .port-img1{grid-area: portImg1;}
+      .port-img2{grid-area: portImg2;}
+      .port-img3{grid-area: portImg3;}
+      .port-img4{grid-area: portImg4;}
+    }
+    .port-videos{
+      margin-top: 20px;
+      grid-area: portVideos;
+
+      display: grid;
+      grid-template-areas:
+      "portVideo1 portVideo2";
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 20px;
+      .port-video1{grid-area: portVideo1;}
+      .port-video2{grid-area: portVideo2;}
+    }
+  }
 }
 .contato{
-  background: #ccc;
+  background: $azul-escuro;
   grid-area: contato;
+  height: auto;
+  width: 100%;
+  padding: 20px;
+  padding-bottom: 30px;
+  h3{
+    position: relative;
+    color: $amarelo;
+    &::after{
+      content: '';
+      position: absolute;
+      top: 25px;
+      right: 0;
+      width: 100%;
+      height: 1px;
+      background: $amarelo;
+    }
+  }
+  .desc-contato{
+    color: #fff;
+    text-align: left;
+    font-size: 20px;
+    margin: 20px 50% 20px 0;
+  }
+  a{
+    color: $amarelo;
+    font-weight: 200;
+    display: block;
+    margin-bottom: -10px;
+    width: auto;
+  }
 }

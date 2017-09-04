@@ -237,40 +237,64 @@ body {
 }
 
 /* line 145, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
-.main .sobre {
+.main .sobre, .main .servicos, .main .portfolio {
+  height: 100vh;
+}
+
+/* line 148, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .sobre, .main .servicos, .main .portfolio, .main .contato {
+  padding: 20px;
   display: grid;
+}
+
+/* line 151, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .sobre h3, .main .servicos h3, .main .portfolio h3, .main .contato h3 {
+  position: relative;
+}
+
+/* line 153, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .sobre h3::after, .main .servicos h3::after, .main .portfolio h3::after, .main .contato h3::after {
+  content: '';
+  position: absolute;
+  top: 25px;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background: #00132d;
+}
+
+/* line 164, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .sobre {
   grid-template-areas: "logo" "titulo1sobre" "descsobre";
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 4fr;
   grid-gap: 20px;
-  height: 100vh;
   background: url(../img/capa-fb-site.jpg) no-repeat center;
   background-size: cover;
   color: #fff;
-  padding: 20px;
 }
 
-/* line 160, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+/* line 177, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
 .main .sobre .logo {
   grid-area: logo;
 }
 
-/* line 162, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+/* line 179, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
 .main .sobre .logo img {
   width: 100%;
 }
 
-/* line 166, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+/* line 183, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
 .main .sobre .titulo1 {
   grid-area: titulo1sobre;
 }
 
-/* line 168, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+/* line 185, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
 .main .sobre .titulo1 h1 {
   font-weight: 400;
 }
 
-/* line 170, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+/* line 187, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
 .main .sobre .desc-sobre {
   grid-area: descsobre;
   align-self: center;
@@ -280,10 +304,227 @@ body {
   font-weight: 100;
 }
 
-/* line 180, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+/* line 196, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .servicos {
+  width: 100%;
+  background: #f2f2f2;
+  display: grid;
+  grid-template-areas: "titulo2" "servs" "servsDesc";
+  grid-template-rows: 1fr 5fr 4fr;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+
+/* line 207, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .servicos h3 {
+  grid-area: titulo2;
+}
+
+/* line 210, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .servicos .servs {
+  grid-area: servs;
+  display: grid;
+  width: 100%;
+  grid-template-areas: "serv1 serv2 serv3 serv4";
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+}
+
+/* line 220, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .servicos .servs .serv {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* line 224, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .servicos .servs .serv .serv-img {
+  background: #ffd500;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+}
+
+/* line 229, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .servicos .servs .serv .serv-img img {
+  width: 100%;
+  margin: 0;
+}
+
+/* line 234, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .servicos .servs .serv .serv-titulo {
+  text-align: center;
+  color: #00132d;
+  font-size: 1em;
+  width: 100%;
+  height: 40px;
+  text-transform: uppercase;
+  padding-top: 10px;
+}
+
+/* line 244, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .servicos .servs .serv1 {
+  grid-area: serv1;
+}
+
+/* line 245, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .servicos .servs .serv2 {
+  grid-area: serv2;
+}
+
+/* line 246, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .servicos .servs .serv3 {
+  grid-area: serv3;
+}
+
+/* line 247, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .servicos .servs .serv4 {
+  grid-area: serv4;
+}
+
+/* line 250, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .servicos .servs-desc {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20px;
+  grid-area: servsDesc;
+  display: grid;
+  grid-template-areas: "servsDesc1 servsDesc2";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+}
+
+/* line 262, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .servicos .servs-desc .servs-desc1 {
+  grid-area: servsDesc1;
+}
+
+/* line 263, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .servicos .servs-desc .servs-desc2 {
+  grid-area: servsDesc2;
+}
+
+/* line 267, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .portfolio {
+  background: #fff;
+  display: grid;
+  grid-template-areas: "titulo3" "portImgs" "portVideos";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 3fr 6fr;
+}
+
+/* line 276, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .portfolio h3 {
+  grid-area: titulo3;
+}
+
+/* line 277, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .portfolio .port-imgs {
+  grid-area: portImgs;
+  display: grid;
+  grid-template-areas: "portImg1 portImg2 portImg3 portImg4";
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+}
+
+/* line 286, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .portfolio .port-imgs .port-img {
+  background: #ffd500;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+/* line 290, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .portfolio .port-imgs .port-img img {
+  width: 100%;
+}
+
+/* line 293, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .portfolio .port-imgs .port-img1 {
+  grid-area: portImg1;
+}
+
+/* line 294, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .portfolio .port-imgs .port-img2 {
+  grid-area: portImg2;
+}
+
+/* line 295, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .portfolio .port-imgs .port-img3 {
+  grid-area: portImg3;
+}
+
+/* line 296, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .portfolio .port-imgs .port-img4 {
+  grid-area: portImg4;
+}
+
+/* line 298, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .portfolio .port-videos {
+  margin-top: 20px;
+  grid-area: portVideos;
+  display: grid;
+  grid-template-areas: "portVideo1 portVideo2";
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+}
+
+/* line 308, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .portfolio .port-videos .port-video1 {
+  grid-area: portVideo1;
+}
+
+/* line 309, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.main .portfolio .port-videos .port-video2 {
+  grid-area: portVideo2;
+}
+
+/* line 313, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
 .contato {
-  background: #ccc;
+  background: #00132d;
   grid-area: contato;
+  height: auto;
+  width: 100%;
+  padding: 20px;
+  padding-bottom: 30px;
+}
+
+/* line 320, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.contato h3 {
+  position: relative;
+  color: #ffd500;
+}
+
+/* line 323, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.contato h3::after {
+  content: '';
+  position: absolute;
+  top: 25px;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background: #ffd500;
+}
+
+/* line 333, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.contato .desc-contato {
+  color: #fff;
+  text-align: left;
+  font-size: 20px;
+  margin: 20px 50% 20px 0;
+}
+
+/* line 339, C:/Users/ewert/OneDrive/Imagens/Rivas/rivas/css/scss/style.scss */
+.contato a {
+  color: #ffd500;
+  font-weight: 200;
+  display: block;
+  margin-bottom: -10px;
+  width: auto;
 }
 
 /*# sourceMappingURL=../style.map */
