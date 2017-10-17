@@ -7,16 +7,25 @@
   <link rel="icon" href="img/favicon.png">
   <title>Rivelino Mourão</title>
 
+
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
+  <div class="container-site">
+    <nav class="nav-resp">
+      <ul class="">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
     <aside class="aside">
       <header class="header-aside">
         <div class="desc">
           <h3>Rivelino Mourão</h3>
-          <h5>Produtor audiovisual</h5>
+          <h5>Diretor de Audiovisual e Fotógrafo</h5>
         </div>
         <div class="img-perfil">
           <img src="img/foto-perfil.svg" alt="foto de perfil">
@@ -39,8 +48,8 @@
     <main class="main">
       <section id="sobre" class="sobre">
         <div class="logo"><img src="img/letter-rivas.svg" alt="rivelino"></div>
-        <div class="titulo1"><h1>Produtor audiovisual</h1></div>
-        <div class="desc-sobre"><p>Mussum Ipsum, cacilds vidis litro abertis.
+        <div class="titulo1"><h1>Diretor de Audiovisual e Fotógrafo</h1></div>
+        <div class="desc-sobre" uk-parallax="target: #test-filter; blur: 0,10;"><p>Mussum Ipsum, cacilds vidis litro abertis.
           Interessantiss quisso pudia ce receita de bolis,
           mais bolis eu num gostis. Interagi no mé,
           cursus quis, vehicula ac nisi.</p></div>
@@ -49,25 +58,25 @@
         <h3>Serviços</h3>
         <div class="servs">
           <div class="serv serv1">
-            <div class="serv-img"><img src="img/audiovisual.svg" alt="audiovisual"></div>
+            <div class="serv-img"><img src="img/slide/img1.jpg" alt="audiovisual"></div>
             <div class="serv-titulo">
               <h5>Produção audiovisual</h5>
             </div>
           </div>
           <div class="serv serv2">
-            <div class="serv-img"><img src="img/fotografia.svg" alt="fotografia"></div>
+            <div class="serv-img"><img src="img/slide/img2.jpg" alt="fotografia"></div>
             <div class="serv-titulo">
               <h5>Fotografia</h5>
             </div>
           </div>
           <div class="serv serv3">
-            <div class="serv-img"><img src="img/filmagem.svg" alt="filmagem"></div>
+            <div class="serv-img"><img src="img/slide/img3.jpg" alt="filmagem"></div>
             <div class="serv-titulo">
               <h5>Filmagem</h5>
             </div>
           </div>
           <div class="serv serv4">
-            <div class="serv-img"><img src="img/claquete.svg" alt="tv e cinema"></div>
+            <div class="serv-img"><img src="img/slide/img4.jpg" alt="tv e cinema"></div>
             <div class="serv-titulo">
               <h5>Tv & Cinema</h5>
             </div>
@@ -96,24 +105,24 @@
         <h3>Portfólio</h3>
         <div class="port-imgs">
           <div class="port-img port-img1">
-            <div>
-              <img src="img/img.svg" alt="portfolio">
-            </div>
+
+              <img src="img/slide/img1.jpg" alt="portfolio">
+
           </div>
           <div class="port-img port-img2">
-            <div>
-              <img src="img/img.svg" alt="portfolio">
-            </div>
+
+              <img src="img/slide/img2.jpg" alt="portfolio">
+
           </div>
           <div class="port-img port-img3">
-            <div>
-              <img src="img/img.svg" alt="portfolio">
-            </div>
+
+              <img src="img/slide/img3.jpg" alt="portfolio">
+
           </div>
           <div class="port-img port-img4">
-            <div>
-              <img src="img/img.svg" alt="portfolio">
-            </div>
+
+              <img src="img/slide/img4.jpg" alt="portfolio">
+
           </div>
         </div>
         <div class="port-videos">
@@ -135,11 +144,13 @@
       <a href="mailto:rivas@email.com">rivas@email.com</a><br>
       <a href="tel:+5585999555555">(85)99955-5555</a><br>
       <a target="_blank" href="https://www.google.com.br/maps/place/Fortaleza+-+CE/@-3.7906518,-38.5184577,12z/data=!3m1!4b1!4m5!3m4!1s0x7c74c3f464c783f:0x4661c60a0c6b37ca!8m2!3d-3.7319029!4d-38.5267393?hl=pt-BR">Fortaleza, CE</a>
+      
     </footer>
   </div>
 
   <!-- Scripts -->
   <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/index.js"></script>
   <script type="text/javascript">
     $(function(){
        var current = $("nav > a"); // pega o primeiro elemento do menu.
@@ -188,6 +199,9 @@
         }
       }
     });
+  </script>
+
+
   </script>
 </body>
 </html>
