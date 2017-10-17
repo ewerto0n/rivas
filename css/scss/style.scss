@@ -15,10 +15,15 @@ html, body {
 body{
   font-family: $font-montserrat;
   background: #fff;
-  //display: flex;
-  //flex-direction: column;
 }
-.container{
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 20px 0;
+  font-family: $font-montserrat;
+  font-weight: 400;
+  color: #333;
+  text-transform: none;
+}
+.container-site{
   display: grid;
   grid-template-areas:
   "aside main"
@@ -29,7 +34,14 @@ body{
   grid-gap: 0px;
   height: 100vh;
 }
+
+.active{
+  border-right: 3px solid $amarelo;
+  background: $azul-escuro-sec;
+  color: #fff;
+}
 .aside{
+  grid-area: aside;
   display: grid;
   grid-template-areas:
   "headeraside"
@@ -37,13 +49,11 @@ body{
   "sociallinks";
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 2fr 1fr;
-  grid-area: aside;
   background: $azul-escuro;
   height: 100vh;
   width: 320px;
   position: fixed;
   .header-aside{
-    //height: 100px;
     grid-area: headeraside;
     padding: 20px;
     display: grid;
@@ -56,38 +66,35 @@ body{
       grid-area: desc;
       text-align: right;
       align-self: center;
-      //width: 70%;
-      float: left;
-      //padding-right: 20px;
     }
     .img-perfil{
       grid-area: perfil;
       float: left;
       align-self: center;
-      //width: 30%;
       img{
         width: 100px;
       }
     }
     h3{
       color: #fff;
+      margin: 0;
+      font-size: 1.2rem;
+      line-height: 2;
     }
     h5{
-      margin-top: 10px;
+      margin: 10px 0;
       font-weight: 300;
+      font-size: .8rem;
       color: $amarelo;
     }
   }
   .nav{
     grid-area: nav;
     margin: 20px 0;
-    .active{
-      border-right: 3px solid $amarelo;
-      background: $azul-escuro-sec;
-      color: #fff;
-    }
     ul{
-      background: #ccc;
+      background: $azul-escuro;
+      padding: 0;
+      width: 100%;
       li{
         background: #888;
         a{
@@ -105,6 +112,7 @@ body{
             border-right: 3px solid $azul-claro;
             background: $azul-claro;
             color: #fff;
+            text-decoration: none;
           }
         }
       }
@@ -134,6 +142,7 @@ body{
       }
       &:hover{
         color: #fff;
+        text-decoration: none;
       }
     }
   }
@@ -153,7 +162,7 @@ body{
       &::after{
         content: '';
         position: absolute;
-        top: 25px;
+        top: 35px;
         right: 0;
         width: 100%;
         height: 1px;
@@ -182,7 +191,11 @@ body{
     }
     .titulo1{
       grid-area: titulo1sobre;
-      h1{font-weight: 400;}
+      h1{
+        font-weight: 400;
+        color: #fff;
+        font-family: $font-montserrat;
+      }
     }
     .desc-sobre{
       grid-area: descsobre;
@@ -207,27 +220,34 @@ body{
     h3{
       grid-area: titulo2;
     }
+
     .servs{
       grid-area: servs;
-
-      display: grid;
+      display: flex;
+      -webkit-flex-flow: row nowrap;
+      justify-content: space-around;
       width: 100%;
-      grid-template-areas:
-      "serv1 serv2 serv3 serv4";
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: 1fr;
-      grid-column-gap: 20px;
+
+      .servsCarousel{
+
+      }
       .serv{
+        &:not(:first-child):not(:last-child){
+          margin: 0 20px 0 0;
+        }
+        display: flex;
+        -webkit-flex-flow: column nowrap;
         width: 100%;
         height: auto;
         margin-bottom: 20px;
         .serv-img{
-          background: $amarelo;
-          height: 100%;
+          height: 200px;
           width: 100%;
-          padding: 20px;
+
           img{
+            object-fit: cover;
             width: 100%;
+            height: 200px;
             margin: 0;
           }
         }
@@ -237,14 +257,13 @@ body{
           font-size: 1em;
           width: 100%;
           height: 40px;
-          text-transform: uppercase;
-          padding-top: 10px;
+          padding-top: 20px;
+          h5{
+            text-transform: uppercase;
+            font-weight: 600;
+          }
         }
       }
-      .serv1{grid-area: serv1;}
-      .serv2{grid-area: serv2;}
-      .serv3{grid-area: serv3;}
-      .serv4{grid-area: serv4;}
 
     }
     .servs-desc{
@@ -276,18 +295,25 @@ body{
     h3{grid-area: titulo3;}
     .port-imgs{
       grid-area: portImgs;
-      display: grid;
-      grid-template-areas:
-      "portImg1 portImg2 portImg3 portImg4";
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: 1fr;
-      grid-column-gap: 20px;
+      display: flex;
+      -webkit-flex-flow: row nowrap;
+      justify-content: space-around;
+      width: 100%;
 
       .port-img {
-        background: $amarelo;
+        margin-bottom: 20px;
+        &:not(:last-child){
+          margin-right: 20px;
+        }
+
         margin-top: 20px;
-        padding: 20px;
-        img{width: 100%;}
+        padding: 0;
+        img{
+          object-fit: cover;
+          width: 100%;
+          height: 200px;
+          margin: 0;
+        }
       }
 
       .port-img1{grid-area: portImg1;}
@@ -323,7 +349,7 @@ body{
     &::after{
       content: '';
       position: absolute;
-      top: 25px;
+      top: 35px;
       right: 0;
       width: 100%;
       height: 1px;
@@ -344,3 +370,4 @@ body{
     width: auto;
   }
 }
+@import "media_query";
