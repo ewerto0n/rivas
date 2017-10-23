@@ -215,7 +215,7 @@ h6 {
         background: #f2f2f2;
         display: grid;
         grid-template-areas: "titulo2" "servs" "servsDesc";
-        grid-template-rows: 1fr 5fr 5fr;
+        grid-template-rows: 1fr auto auto;
         grid-template-columns: 1fr;
         grid-gap: 20px;
         h3 {
